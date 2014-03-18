@@ -33,6 +33,7 @@ public class RobotThread extends Thread {
 
     //Control variable for the mode of the game (e.g. STATE_READY)
     protected int mMode = STATE_NOWIFI;
+    protected int prevMode = STATE_NOWIFI;
 
     //Control of the actual running inside run()
     private boolean mRun = false;
@@ -222,7 +223,11 @@ public class RobotThread extends Thread {
 
     public void doPause() {
         synchronized (mSurfaceHolder) {
-            if (mMode == STATE_RUNNING){
+            if (mMode == STATE_PAUSED){
+                prevMode = STATE_PAUSED;
+            }
+            else if (mMode == STATE_RUNNING){
+                prevMode = STATE_RUNNING;
                 setState(STATE_PAUSED);
                 resetDisplay();
             }
@@ -231,7 +236,7 @@ public class RobotThread extends Thread {
 
     public void unpause() {
         synchronized (mSurfaceHolder) {
-            if (mMode == STATE_PAUSED) {
+            if (mMode == STATE_PAUSED && prevMode == STATE_RUNNING) {
                 setState(STATE_RUNNING);
             }
         }

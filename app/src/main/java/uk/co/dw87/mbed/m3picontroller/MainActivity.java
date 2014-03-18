@@ -113,7 +113,7 @@ public class MainActivity extends ActionBarActivity {
         startStopButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mRobotThread.getMode() == RobotThread.STATE_CONNECTED){
+                if ((mRobotThread.getMode() == RobotThread.STATE_CONNECTED) || (mRobotThread.getMode() == RobotThread.STATE_PAUSED)){
                     mRobotThread.doStart();
                     startStopButton.setText(R.string.stop_button);
                     connectButton.setEnabled(false);
@@ -122,11 +122,6 @@ public class MainActivity extends ActionBarActivity {
                     mRobotThread.doPause();
                     startStopButton.setText(R.string.start_button);
                     connectButton.setEnabled(true);
-                }
-                else if (mRobotThread.getMode() == RobotThread.STATE_PAUSED){
-                    mRobotThread.unpause();
-                    startStopButton.setText(R.string.stop_button);
-                    connectButton.setEnabled(false);
                 }
             }
         });
@@ -191,6 +186,7 @@ public class MainActivity extends ActionBarActivity {
     /*
 	 * Activity state functions
 	 */
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -328,7 +324,7 @@ public class MainActivity extends ActionBarActivity {
                         }
                     });
 
-        // create an alert dialog
+        // Create an alert dialog
         final AlertDialog alertD = alertDialogBuilder.create();
 
         alertD.setOnShowListener(new DialogInterface.OnShowListener() {
