@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">m3pi Controller</string>
+    <string name="robotX_label">Robot X:</string>
+    <string name="robotY_label">Robot Y:</string>
+    <string name="spriteX_label">Sprite X:</string>
+    <string name="spriteY_label">Sprite Y:</string>
+    <string name="touchX_label">Touch X:</string>
+    <string name="touchY_label">Touch Y:</string>
+    <string name="robotX_value">0</string>
+    <string name="robotY_value">0</string>
+    <string name="spriteX_value">0</string>
+    <string name="spriteY_value">0</string>
+    <string name="touchX_value">0</string>
+    <string name="touchY_value">0</string>
+    <string name="status_nowifi">No WiFi connection!</string>
+    <string name="status_default">Ready</string>
+    <string name="status_connected">Connected</string>
+    <string name="status_running">Running</string>
+    <string name="status_paused">Paused</string>
+    <string name="app_title">Robot Interface</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_about">About</string>
+    <string name="connect_button">Open</string>
+    <string name="disconnect_button">Close</string>
+    <string name="start_button">Start</string>
+    <string name="stop_button">Stop</string>
+    <string name="about_button">About</string>
+    <string name="app_about">Drive an m3pi Robot over WiFi!  \nConnect by IP or Hostname.  \nDrag the
+    ball to drive the robot!  </string>
+    <string name="menu_label">Robot IP Address:</string>
+    <string name="broadcast_label">Broadcast?</string>
+
+</resources>

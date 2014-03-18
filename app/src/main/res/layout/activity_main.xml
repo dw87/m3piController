@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="uk.co.dw87.mbed.m3picontroller.MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/quarter_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:id="@+id/app_title"
+            android:text="@string/app_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="36sp"
+            android:typeface="monospace"
+            android:gravity="center" />
+
+        <RelativeLayout
+            android:id="@+id/status_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_title"
+            android:layout_marginBottom="8dp">
+            <TextView
+                android:id="@+id/touchX_label"
+                android:text="@string/touchX_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:paddingRight="10dp"/>
+            <TextView
+                android:id="@+id/touchX_value"
+                android:text="@string/touchX_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/touchX_label"/>
+
+            <TextView
+                android:id="@+id/robotX_label"
+                android:text="@string/robotX_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:paddingRight="10dp"
+                android:layout_centerHorizontal="true"/>
+            <TextView
+                android:id="@+id/robotX_value"
+                android:text="@string/robotX_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/robotX_label"/>
+
+
+            <TextView
+                android:id="@+id/spriteX_value"
+                android:text="@string/spriteX_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"/>
+            <TextView
+                android:id="@+id/spriteX_label"
+                android:text="@string/spriteX_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:paddingRight="10dp"
+                android:layout_toLeftOf="@id/spriteX_value"/>
+
+            <TextView
+                android:id="@+id/touchY_label"
+                android:text="@string/touchY_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:paddingRight="10dp"
+                android:layout_below="@id/touchX_label"
+                />
+            <TextView
+                android:id="@+id/touchY_value"
+                android:text="@string/touchY_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/touchY_label"
+                android:layout_below="@id/touchX_label"/>
+
+            <TextView
+                android:id="@+id/robotY_label"
+                android:text="@string/robotY_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:paddingRight="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/robotX_label"/>
+            <TextView
+                android:id="@+id/robotY_value"
+                android:text="@string/robotY_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/robotY_label"
+                android:layout_below="@id/robotX_value"/>
+
+
+            <TextView
+                android:id="@+id/spriteY_value"
+                android:text="@string/spriteY_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/spriteX_value"/>
+            <TextView
+                android:id="@+id/spriteY_label"
+                android:text="@string/spriteY_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:paddingRight="10dp"
+                android:layout_toLeftOf="@id/spriteY_value"
+                android:layout_below="@id/spriteX_label"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <Button
+                android:id="@+id/btnConnect"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/connect_button"
+                android:textSize="20sp"
+                android:enabled="false" />
+            <Button
+                android:id="@+id/btnStartStop"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/start_button"
+                android:textSize="20sp"
+                android:enabled="false"
+                android:layout_centerHorizontal="true" />
+            <Button
+                android:id="@+id/btnAbout"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/about_button"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/control_zone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/buttons"
+            android:layout_below="@id/status_data">
+            <uk.co.dw87.mbed.m3picontroller.RobotView
+                android:id="@+id/robotArea"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:id="@+id/status_label"
+                android:text="@string/status_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:typeface="monospace"
+                android:gravity="center"
+                android:textSize="20sp"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
