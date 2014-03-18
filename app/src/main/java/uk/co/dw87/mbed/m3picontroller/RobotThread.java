@@ -125,6 +125,7 @@ public class RobotThread extends Thread {
     //Action on WiFi connection being lost
     public void onWiFiDisconnect () {
         synchronized(mSurfaceHolder) {
+            doDisconnect();
             setState(STATE_NOWIFI);
             resetDisplay();
         }
@@ -170,7 +171,7 @@ public class RobotThread extends Thread {
     //Disconnect the controller from the robot (stop transmitting)
     public void doDisconnect() {
         synchronized (mSurfaceHolder) {
-            if (mMode == STATE_CONNECTED || mMode == STATE_PAUSED){
+            if (mMode == STATE_CONNECTED || mMode == STATE_PAUSED || mMode == STATE_RUNNING){
                 try {
                     robotSocket.disconnect();
                     robotSocket.close();
