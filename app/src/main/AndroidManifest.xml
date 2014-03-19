@@ -10,8 +10,7 @@
         <activity
             android:name="uk.co.dw87.mbed.m3picontroller.MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            android:clearTaskOnLaunch="true">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

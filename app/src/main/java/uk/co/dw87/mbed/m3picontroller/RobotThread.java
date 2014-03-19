@@ -84,6 +84,9 @@ public class RobotThread extends Thread {
      * Dare I say memory leak...
      */
     public void cleanup() {
+        this.robotSocket.close();
+        this.robotSocket = null;
+        this.robotAddr = null;
         this.mContext = null;
         this.mRobotView = null;
         this.mHandler = null;
@@ -96,7 +99,7 @@ public class RobotThread extends Thread {
         mRobot.setX(mCanvasWidth / 2);
         mRobot.setY(mCanvasHeight / 2);
 
-        mLastTime = System.currentTimeMillis()+(1000/mTransmitRate);
+        mLastTime = System.currentTimeMillis()-(1000/mTransmitRate);
 
         resetDisplay();
     }
