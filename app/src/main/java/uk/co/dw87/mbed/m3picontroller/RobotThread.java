@@ -63,7 +63,7 @@ public class RobotThread extends Thread {
     //Network Connection and data packet
     protected DatagramSocket robotSocket;
     protected InetAddress robotAddr;
-    protected int robotPort = 3636;
+    protected int robotPort = 31416; //Port number, approximately based on Pi (3.14159...)
     protected DatagramPacket robotPacket;
     protected int msgLength = 0;
     protected String messageText;
